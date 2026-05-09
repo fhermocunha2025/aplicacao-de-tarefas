@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { TaskContext } from '../context/TaskContext';
+import TaskItem from '../components/TaskItem'; // Importando o novo componente
 
 const Home = () => {
   const { tasks, removeTask, toggleTask } = useContext(TaskContext);
@@ -12,23 +13,19 @@ const Home = () => {
         <button style={{ marginBottom: '20px' }}>Adicionar Nova Tarefa</button>
       </Link>
 
+      {/* Renderização Condicional com && */}
       {tasks.length === 0 && (
         <p>Você ainda não adicionou nenhuma tarefa.</p>
       )}
 
-      <ul>
+      <ul style={{ padding: 0, listStyle: 'none' }}>
         {tasks.map(task => (
-          <li key={task.id} style={{ marginBottom: '10px' }}>
-            <span 
-              onClick={() => toggleTask(task.id)}
-              style={{ textDecoration: task.completed ? 'line-through' : 'none', cursor: 'pointer' }}
-            >
-              {task.title}
-            </span>
-            <button onClick={() => removeTask(task.id)} style={{ marginLeft: '10px' }}>
-              Excluir
-            </button>
-          </li>
+          <TaskItem 
+            key={task.id} 
+            task={task} 
+            onRemove={removeTask} 
+            onToggle={toggleTask} 
+          />
         ))}
       </ul>
     </div>
