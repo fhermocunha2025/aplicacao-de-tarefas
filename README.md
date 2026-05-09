@@ -23,4 +23,4 @@ A organização do código segue as melhores práticas de componentização:
 ## 🔧 Como executar o projeto
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/](https://github.com/)[seu-usuario]/aplicacao-de-tarefas.git
+   git clone https://github.com/fhermocunha2025/aplicacao-de-tarefas

@@ -13,7 +13,6 @@ const Home = () => {
         <button style={{ marginBottom: '20px' }}>Adicionar Nova Tarefa</button>
       </Link>
 
-      {/* Renderização Condicional com && */}
       {tasks.length === 0 && (
         <p>Você ainda não adicionou nenhuma tarefa.</p>
       )}
